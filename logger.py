@@ -59,15 +59,13 @@ def snapshot():
                     snap[p.as_posix()] = hash_file(p)
     return snap
 
-
 def load_log():
-    # Si existe el log, lo lee y convierte el JSON en una lista de python. 
-    if log_path.exists():
-        return json.loads(log_path.read_text())
-
-    # Si es la primera vez, devuelve una lista vacia.
-    return []
-
+    if not log_path.exists():
+        return []
+    text = log_path.read_text(encoding="utf-8").strip()
+    if not text:          # empty file -> treat as first run
+        return []
+    return json.loads(text)
 
 def git_commit():
     # Corre el comando 
