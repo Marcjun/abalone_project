@@ -1,0 +1,17 @@
+[
+  {
+    "timestamp": "2026-10-24T18:39:03.224139+00:00",
+    "description": "Se agreg\u00f3 la columna edadSe encode\u00f3 sexo con one-hotSe sacaron los outliers",
+    "git_commit": "048628f",
+    "added": [
+      "C:/Users/marco/OneDrive/Documentos/!!UNL/3erC2 - Laboratorio de Datos II/GTP 5/abalone_project/data/raw/abalone.csv",
+      "C:/Users/marco/OneDrive/Documentos/!!UNL/3erC2 - Laboratorio de Datos II/GTP 5/abalone_project/data/processed/processed.csv"
+    ],
+    "modified": [],
+    "removed": [],
+    "snapshot": {
+      "C:/Users/marco/OneDrive/Documentos/!!UNL/3erC2 - Laboratorio de Datos II/GTP 5/abalone_project/data/raw/abalone.csv": "6fda3c4b0c0cff9bd5f7a46434509179069ed620c8fc7090d872a08d2c1a729a",
+      "C:/Users/marco/OneDrive/Documentos/!!UNL/3erC2 - Laboratorio de Datos II/GTP 5/abalone_project/data/processed/processed.csv": "3c3d23a682b854a6bad95ce2c0e2223d7bf6fe80bf0b97744379ae03b771a40a"
+    }
+  }
+]
