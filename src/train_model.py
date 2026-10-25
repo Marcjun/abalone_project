@@ -51,3 +51,16 @@ estudio = op.create_study(
     )
 estudio.optimize(func_objec, n_trials=25)
 Mejores_params=estudio.best_params
+#Entrenar  un modelo de regresión  RandomForestRegressor
+pipe = RandomForestRegressor(**Mejores_params, random_state=42) # n_estimators define la cantidad de árboles en el bosque
+pipe.fit(X_train, y_train)
+y_pred = pipe.predict(X_test)
+metricas_test= {
+  'MAE' : mean_absolute_error(y_test, y_pred),
+  'MSE' : mean_squared_error(y_test, y_pred),
+  'RMSE' : root_mean_squared_error(y_test, y_pred),
+  'R2' : r2_score(y_test, y_pred)
+}
+
+for nombre, valor in metricas_test.items():
+    print(f"{nombre}: {valor:.2f}")
