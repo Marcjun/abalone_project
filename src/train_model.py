@@ -66,3 +66,20 @@ for nombre, valor in metricas_test.items():
     print(f"{nombre}: {valor:.2f}")
 #Guardar el modelo entrenado 
 joblib.dump(pipe, "models/model_v1.pkl", compress=3)
+#Guardar sus métricas (MAE, RMSE, R²), hiperparámetros y semilla en results/metrics_v1.json
+datos=	{
+		"Métricas":{
+		"RMSE": metricas_test['RMSE'],
+		"MAE": metricas_test['MAE'],
+		"R2": metricas_test['R2']
+		},
+		"Hiperparámetros":{
+		"n_estimators":Mejores_params['n_estimators'],
+		"max_depth":Mejores_params['max_depth'],
+		"min_samples_split":Mejores_params['min_samples_split']
+		},
+		"semilla":42
+}
+with open("results/metrics_v1.json", "w") as f:
+    json.dump(datos, f)
+
