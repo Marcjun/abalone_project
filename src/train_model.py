@@ -45,3 +45,9 @@ def func_objec (trial):
   trial.set_user_attr("MSE", MSE)
   trial.set_user_attr("R2", R2)
   return  RMSE
+estudio = op.create_study(
+    direction="minimize",
+    sampler=op.samplers.TPESampler(seed=42)
+    )
+estudio.optimize(func_objec, n_trials=25)
+Mejores_params=estudio.best_params
