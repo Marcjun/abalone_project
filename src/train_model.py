@@ -5,7 +5,7 @@ import optuna as op
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split 
 from sklearn.metrics import mean_squared_error, r2_score,  mean_absolute_error,  root_mean_squared_error
-
+from datetime import datetime
 #fijando la semilla (random_state) tanto en la división como en el modelo
 #Dividir los datos en entrenamiento y test
 #division de datos en train y test
@@ -82,4 +82,23 @@ datos=	{
 }
 with open("results/metrics_v1.json", "w") as f:
     json.dump(datos, f)
+#Registrar la ejecución en results/experiments_log.csv
+df_info=pd.read_csv('results/experiments_log.csv')
+if df_info.empty:
+	valor=0
+else:
+	valor=df_info['experimento_id'].iloc[-1]
 
+info = {
+    "id_experimento": valor+1,
+    "DateTime": datetime.now(),
+    "model_version": "v1",
+    "Hiper_n_estimators":Mejores_params['n_estimators'],
+    "Hiper_max_depth":Mejores_params['max_depth'],
+    "Hiper_min_samples_split":Mejores_params['min_samples_split'],
+    "RMSE": metricas_test['RMSE'],
+    "MAE": metricas_test['MAE'],
+    "R2": metricas_test['R2']
+}
+info=pd.DataFrame([info])
+info.to_csv('results/experiments_log.csv', mode="a")#agrega el nuevo registro al final del archivo, en vez de sobrescribirlo.
