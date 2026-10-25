@@ -80,7 +80,7 @@ def git_commit():
         return None
 
 
-def log_changes(description="", extra=None):
+def log_changes(description=None, extra=None):
     """Append a log entry if the data folders changed since the last entry."""
     # Acá está lo que se llama. 
 
@@ -107,6 +107,18 @@ def log_changes(description="", extra=None):
     if not (added or removed or modified):
         print("data_logger: no changes detected.")
         return None
+
+    # Muestro qué cambió antes de pedir la descripción, así sabés qué escribir.
+    print(f"Changes detected: {len(added)} added, {len(modified)} modified, {len(removed)} removed.")
+    for label, paths in (("+", added), ("~", modified), ("-", removed)):
+        for p in paths:
+            print(f"  {label} {p}")
+
+    # Si no me pasan descripción, la pido por consola.
+    # Sigo preguntando hasta que escriban algo (no se acepta vacío).
+    if description is None:
+        while not (description := input("Describe this change: ").strip()):
+            print("The description can't be empty.")
 
     entry = {
         "timestamp": datetime.now(timezone.utc).isoformat(),
