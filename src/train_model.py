@@ -1,6 +1,7 @@
 import json
 import pandas as pd
 import joblib 
+import os
 import optuna as op
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split 
@@ -83,11 +84,12 @@ datos=	{
 with open("results/metrics_v1.json", "w") as f:
     json.dump(datos, f)
 #Registrar la ejecución en results/experiments_log.csv
-df_info=pd.read_csv('results/experiments_log.csv')
-if df_info.empty:
-	valor=0
-else:
-	valor=df_info['experimento_id'].iloc[-1]
+# Registrar la ejecución en results/experiments_log.csv
+try:
+    df_info = pd.read_csv('results/experiments_log.csv')
+    valor = df_info['id_experimento'].iloc[-1]
+except (pd.errors.EmptyDataError, IndexError):
+    valor = 0
 
 info = {
     "id_experimento": valor+1,
@@ -101,4 +103,9 @@ info = {
     "R2": metricas_test['R2']
 }
 info=pd.DataFrame([info])
-info.to_csv('results/experiments_log.csv', mode="a")#agrega el nuevo registro al final del archivo, en vez de sobrescribirlo.
+info.to_csv(
+    'results/experiments_log.csv',
+    mode="a",#agrega el nuevo registro al final del archivo, en vez de sobrescribirlo.
+    index=False,
+    header=os.path.getsize('results/experiments_log.csv') == 0
+)
