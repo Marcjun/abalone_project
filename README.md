@@ -30,7 +30,17 @@ Se busca clasificar abalones. . .
 python -m src.preprocess
 
 ```
-
+* 3 -  Pasos para entrenar y evaluar el modelo:
+```
+    1.Verificar que se haya ejecutado el preprocessing y que exista el archivo  
+    data/processed/processed.csv.
+    2.Ejecutar el script de entrenamiento y evaluación
+    3.Consultar los resultados obtenidos en la ejecucion:
+        models/model_v1.pkl: modelo entrenado.
+        results/metrics_v1.json: métricas de evaluación e hiperparámetros del modelo.
+        results/experiments_log.csv: registro de los experimentos realizados.
+        El modelo utilizado es RandomForestRegressor. Se emplea Optuna para buscar los mejores hiperparámetros y se evalúa el rendimiento mediante MAE, RMSE y R².
+```
 
 
 
