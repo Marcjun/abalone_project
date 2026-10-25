@@ -31,6 +31,7 @@ df['outlier_lof'] = pred_lof == -1
 df = df[df["outlier_lof"] == False]
 
 df[columnas_numericas] = scaler.inverse_transform(df[columnas_numericas])
+df = df.drop(columns='outlier_lof')
 
 # Guardo el processed
 df.to_csv(processed_path, index=False)
@@ -38,8 +39,6 @@ df.to_csv(processed_path, index=False)
 # Loggeo 
 from logger import log_changes
 cambios = "" \
-"Se agregó la columna edad" \
-"Se encodeó sexo con one-hot" \
-"Se sacaron los outliers"
+"Saco la columna outlier_lof" 
 
 log_changes(cambios)

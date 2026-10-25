@@ -13,5 +13,27 @@
       "C:/Users/marco/OneDrive/Documentos/!!UNL/3erC2 - Laboratorio de Datos II/GTP 5/abalone_project/data/raw/abalone.csv": "6fda3c4b0c0cff9bd5f7a46434509179069ed620c8fc7090d872a08d2c1a729a",
       "C:/Users/marco/OneDrive/Documentos/!!UNL/3erC2 - Laboratorio de Datos II/GTP 5/abalone_project/data/processed/processed.csv": "3c3d23a682b854a6bad95ce2c0e2223d7bf6fe80bf0b97744379ae03b771a40a"
     }
+  },
+  {
+    "timestamp": "2026-10-25T18:47:43.829831+00:00",
+    "description": "Saco la columna outlier_lof",
+    "git_commit": "d63f1e9",
+    "added": [
+      "C:/Users/marco/OneDrive/Documentos/!!UNL/3erC2 - Laboratorio de Datos II/GTP 5/abalone_project/data/raw/abalone.data",
+      "C:/Users/marco/OneDrive/Documentos/!!UNL/3erC2 - Laboratorio de Datos II/GTP 5/abalone_project/data/raw/abalone.names",
+      "C:/Users/marco/OneDrive/Documentos/!!UNL/3erC2 - Laboratorio de Datos II/GTP 5/abalone_project/data/raw/Index"
+    ],
+    "modified": [
+      "C:/Users/marco/OneDrive/Documentos/!!UNL/3erC2 - Laboratorio de Datos II/GTP 5/abalone_project/data/raw/abalone.csv",
+      "C:/Users/marco/OneDrive/Documentos/!!UNL/3erC2 - Laboratorio de Datos II/GTP 5/abalone_project/data/processed/processed.csv"
+    ],
+    "removed": [],
+    "snapshot": {
+      "C:/Users/marco/OneDrive/Documentos/!!UNL/3erC2 - Laboratorio de Datos II/GTP 5/abalone_project/data/raw/abalone.csv": "2f307862b9da8e24dee6f84ca2faae6ff306f068411cf240f1486a905945086a",
+      "C:/Users/marco/OneDrive/Documentos/!!UNL/3erC2 - Laboratorio de Datos II/GTP 5/abalone_project/data/raw/abalone.data": "00cf87f69c9ad50e63c0b8a1df0ded93c746c9319bd9da366cd7f148cad9c286",
+      "C:/Users/marco/OneDrive/Documentos/!!UNL/3erC2 - Laboratorio de Datos II/GTP 5/abalone_project/data/raw/abalone.names": "b1b73f89cc7281a873200e8a76c1012737324502a90f09541906d77d53141be1",
+      "C:/Users/marco/OneDrive/Documentos/!!UNL/3erC2 - Laboratorio de Datos II/GTP 5/abalone_project/data/raw/Index": "c51622c45f3d988d78b59ec7baf2d9b3ad9a3b77519b3d7ac02df4d9d85fbb1e",
+      "C:/Users/marco/OneDrive/Documentos/!!UNL/3erC2 - Laboratorio de Datos II/GTP 5/abalone_project/data/processed/processed.csv": "7039fddc683a9af775a7ca09954d7ff4352e7958c13b0fedcb356208c002eea9"
+    }
   }
 ]
