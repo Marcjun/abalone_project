@@ -64,3 +64,5 @@ metricas_test= {
 
 for nombre, valor in metricas_test.items():
     print(f"{nombre}: {valor:.2f}")
+#Guardar el modelo entrenado 
+joblib.dump(pipe, "models/model_v1.pkl", compress=3)
