@@ -1,0 +1,2 @@
+id_experimento,DateTime,model_version,Hiper_n_estimators,Hiper_max_depth,Hiper_min_samples_split,RMSE,MAE,R2
+1,2026-10-25 17:30:23.103196,v1,176,10,7,2.1363975938923443,1.517700045898417,0.5765016894503677
