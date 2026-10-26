@@ -1,0 +1,1 @@
+{"M\u00e9tricas": {"RMSE": 2.1974098676645744, "MAE": 1.561604097003035, "R2": 0.5519673513919798}, "Hiperpar\u00e1metros": {"n_estimators": 10, "max_depth": 6, "min_samples_split": 4}, "semilla": 42}
