@@ -25,15 +25,14 @@ X_ajuste, X_val, y_ajuste, y_val = train_test_split(
 #con optuna busco la mejor combinacion de hiperparametros 
 def func_objec (trial):
 
+
 #  cant_estimators = trial.suggest_int('n_estimators', 50, 200)# cantidad de árboles del bosque.
 #  max_profundidad = trial.suggest_int('max_depth', 3, 20)# profundidad máxima de cada árbo
 #  min_samples_split = trial.suggest_int('min_samples_split', 2, 10)# mínimo de observaciones que debe tener cada hoja
 
-  cant_estimators = trial.suggest_int('n_estimators', 10, 100)# cantidad de árboles del bosque.
-  max_profundidad = trial.suggest_int('max_depth', 2, 50)# profundidad máxima de cada árbo
+  cant_estimators = trial.suggest_int('n_estimators', 10, 400)# cantidad de árboles del bosque.
+  max_profundidad = trial.suggest_int('max_depth', 5, 50)# profundidad máxima de cada árbo
   min_samples_split = trial.suggest_int('min_samples_split', 2, 30)# mínimo de observaciones que debe tener cada hoja
-
-
 
   modelo = RandomForestRegressor(
       n_estimators = cant_estimators,
