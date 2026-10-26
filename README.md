@@ -42,7 +42,19 @@ python -m src.preprocess
         El modelo utilizado es RandomForestRegressor. Se emplea Optuna para buscar los mejores hiperparámetros y se evalúa el rendimiento mediante MAE, RMSE y R².
 ```
 
+* 4 - Resultados del ejercicio 4:
+Version 1era de los cambios de hiperparametros
+MAE: 1.51
+MSE: 4.54
+RMSE: 2.13
+R2: 0.58
 
+Version 2 de los cambios de hiperparametros
+RMSE:2.131806197929393
+MAE:1.5133299740283601
+R2: 0.5783200391833824
+
+Verson 3 de los cambios de hiperparametros
 
 
 
