@@ -30,9 +30,9 @@ def func_objec (trial):
 #  max_profundidad = trial.suggest_int('max_depth', 3, 20)# profundidad máxima de cada árbo
 #  min_samples_split = trial.suggest_int('min_samples_split', 2, 10)# mínimo de observaciones que debe tener cada hoja
 
-  cant_estimators = trial.suggest_int('n_estimators', 10, 400)# cantidad de árboles del bosque.
-  max_profundidad = trial.suggest_int('max_depth', 5, 50)# profundidad máxima de cada árbo
-  min_samples_split = trial.suggest_int('min_samples_split', 2, 30)# mínimo de observaciones que debe tener cada hoja
+  cant_estimators = trial.suggest_int('n_estimators', 1, 2)# cantidad de árboles del bosque.
+  max_profundidad = trial.suggest_int('max_depth', 1, 2)# profundidad máxima de cada árbo
+  min_samples_split = trial.suggest_int('min_samples_split', 2, 3)# mínimo de observaciones que debe tener cada hoja
 
   modelo = RandomForestRegressor(
       n_estimators = cant_estimators,
@@ -75,7 +75,7 @@ metricas_test= {
 for nombre, valor in metricas_test.items():
     print(f"{nombre}: {valor:.2f}")
 #Guardar el modelo entrenado 
-joblib.dump(pipe, "models/model_v2.pkl", compress=3)
+joblib.dump(pipe, "models/model_v3.pkl", compress=3)
 #Guardar sus métricas (MAE, RMSE, R²), hiperparámetros y semilla en results/metrics_v1.json
 datos=	{
 		"Métricas":{
@@ -90,7 +90,7 @@ datos=	{
 		},
 		"semilla":42
 }
-with open("results/metrics_v2.json", "w") as f:
+with open("results/metrics_v3.json", "w") as f:
     json.dump(datos, f)
 #Registrar la ejecución en results/experiments_log.csv
 # Registrar la ejecución en results/experiments_log.csv
