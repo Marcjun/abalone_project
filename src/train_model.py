@@ -25,9 +25,14 @@ X_ajuste, X_val, y_ajuste, y_val = train_test_split(
 #con optuna busco la mejor combinacion de hiperparametros 
 def func_objec (trial):
 
-  cant_estimators = trial.suggest_int('n_estimators', 100, 400)
-  max_profundidad = trial.suggest_int('max_depth', 5, 30)
-  min_samples_split = trial.suggest_int('min_samples_split', 2, 20)# mínimo de observaciones que debe tener cada hoja
+
+#  cant_estimators = trial.suggest_int('n_estimators', 50, 200)# cantidad de árboles del bosque.
+#  max_profundidad = trial.suggest_int('max_depth', 3, 20)# profundidad máxima de cada árbo
+#  min_samples_split = trial.suggest_int('min_samples_split', 2, 10)# mínimo de observaciones que debe tener cada hoja
+
+  cant_estimators = trial.suggest_int('n_estimators', 10, 400)# cantidad de árboles del bosque.
+  max_profundidad = trial.suggest_int('max_depth', 5, 50)# profundidad máxima de cada árbo
+  min_samples_split = trial.suggest_int('min_samples_split', 2, 30)# mínimo de observaciones que debe tener cada hoja
 
   modelo = RandomForestRegressor(
       n_estimators = cant_estimators,
@@ -46,11 +51,15 @@ def func_objec (trial):
   trial.set_user_attr("MSE", MSE)
   trial.set_user_attr("R2", R2)
   return  RMSE
+
+
 estudio = op.create_study(
     direction="minimize",
     sampler=op.samplers.TPESampler(seed=42)
     )
-estudio.optimize(func_objec, n_trials=25)
+#estudio.optimize(func_objec, n_trials=25)
+estudio.optimize(func_objec, n_trials=15)
+
 Mejores_params=estudio.best_params
 #Entrenar  un modelo de regresión  RandomForestRegressor
 pipe = RandomForestRegressor(**Mejores_params, random_state=42) # n_estimators define la cantidad de árboles en el bosque
@@ -67,7 +76,11 @@ for nombre, valor in metricas_test.items():
     print(f"{nombre}: {valor:.2f}")
 #Guardar el modelo entrenado 
 joblib.dump(pipe, "models/model_v2.pkl", compress=3)
+<<<<<<< HEAD
 #Guardar sus métricas (MAE, RMSE, R²), hiperparámetros y semilla en results/metrics_v2.json
+=======
+#Guardar sus métricas (MAE, RMSE, R²), hiperparámetros y semilla en results/metrics_v1.json
+>>>>>>> origin/main
 datos=	{
 		"Métricas":{
 		"RMSE": metricas_test['RMSE'],
