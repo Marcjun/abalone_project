@@ -1,22 +1,23 @@
 Versión de python - 3.14.7
 
-Se busca clasificar abalones. . . 
-
 Paso 1:
-    copiar el URL del repositorio
+    Copiar el URL del repositorio.
+
 Paso 2:
-    abrir el VSC
-    abrir terminal->New Terminal.
+    Abrir Visual Studio Code.
+    Terminal -> New Terminal.
         ejecutar git clone URL_DEL_REPOSITORIO
         asegurarse de estar en la carpeta abalone_project
         en caso de no estarlo (si no te aparece en la terminal como 
         ultimo lugar abalone_project, data_path) hacer:  cd abalone_proyect     
         creas el entorno: uv venv [pegar este comando en la terminal]
         instalar los requirements.txt: uv pip install -r requirements.txt [pegar este comando en la terminal]
+        
 Paso 3:
     Archivo/file->abrir carpeta/open 
     buscas la carpeta abalone_project donde la hayas guardado (Users\Usuario->por defecto)
     folder->seleccionar carpeta/select folder
+    
 Paso 4:
     Dentro de la carpeta abalone_project encontrar otras carpetas como:
         el .venv (entorno), 
@@ -25,6 +26,7 @@ Paso 4:
         notebooks (archivo .ipynb que explica la resolucion del merge_conflict )
         result (guarda los resultados de cada ejecucion,tener en cuenta si vas a ejecutar, tenes que cambiar el numero de metrics_v[numero].json, al igual que en models tenes que cambiar model_v[numero].pkl, no llevan los corchetes)
         src (contiene los dos archivos .py, preprocess.py en donde se aplica el preprocesamiento de los datos y se guardan en formato csv y train_model.py donde se dividen los datos en train y test, se entrena un RandomForestRegressor, se buscan los hiperparametros mediante optuna y se guardan los resultados en 3 archivo metrics_v[numero].json que contien los hiperparametros y metricas de cada ejecucion, el experiments_log.csv que contiene los mismo pero con el dia y la fecha de cada ejecucion (es un data frame))
+        
 Paso 5:
     Abrir la terminal y darle a  aceptar que confias en la carpeta, en los creadores del proyecto 
 Paso 6:
