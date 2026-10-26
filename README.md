@@ -113,6 +113,8 @@ Paso 8: Resultados del ejercicio 4
         MAE: 1.561604097003035
 
         R²: 0.5519673513919798
+
+
 =========================================================
 La Explicacion del error esta en el archivo notebook
 
