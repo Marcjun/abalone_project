@@ -54,8 +54,13 @@ RMSE:2.131806197929393
 MAE:1.5133299740283601
 R2: 0.5783200391833824
 
-Verson 3 de los cambios de hiperparametros
+Version 3 de los cambios de hiperparametros
+RMSE: 2.1974098676645744
+MAE: 1.561604097003035
+R2: 0.5519673513919798
 
+=========================================================
+La Explicacion del error esta en el archivo notebook
 
-
+=========================================================
 
